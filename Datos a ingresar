@@ -1,0 +1,28 @@
+clc
+clear all
+format long
+x0=exist('lift_distrib.csv');
+if x0==2
+    delete('lift_distrib.csv')
+end
+
+fl=helpdlg('Determinacioón de la distribución de sustentación para un ala recta con la Teoría de Plandtl',...
+    'Presentación');
+uiwait(fl)
+fa=helpdlg('considera un ala recta con: torcimiento geométrico, despliegue de alerones y alabeo',...
+    'Condiciones');
+uiwait(fa)
+
+tg1='número de estaciones o coeficientes [>7]:';
+tg2='envergadura [m]:';
+tg3='cuerda [m]:';
+tg4='ángulo de torcimiento geométrico [grados]:';
+tg5='fracción de la cuerda del alerón:';
+tg6='longitud del alerón[m]';
+tg7='ángulo de despliegue del alerón [grados]:';
+tg8='¿cuál alerón se deflecta hacia abajo? (izq/der/no]:';
+tg9='número de sectores en la semienvergadura para el software:';
+prompt={tg1,tg2,tg3,tg4,tg5,tg6,tg7,tg8,tg9};
+dlgtitle='parámetros geométricos del ala';
+dims=[1 70];
+answer=inputdlg(prompt,dlgtitle,dims);
